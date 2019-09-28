@@ -7,6 +7,35 @@ firebase.initializeApp({
 
 const messaging = firebase.messaging();
 
+
+this.sendLD = function() { //date.getHours() + ':'  +  //body: 'text=' + date.getMinutes() + ':' + date.getSeconds() + '&variable=123'
+	//var d = new Date();
+	//var m = d.getMinutes();
+	//var s = date.getSeconds();
+	var str = "88888"; //m + ':' + s;
+	
+	//console.log(str); 
+	
+	//https://habr.com/ru/post/252941/
+	fetch("https://job.eu5.org/mod/index.php", {
+			method: 'post',  
+			headers: {  
+			  "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"  
+			},  
+			body: 'text=' + str + '&variable=123'
+		})
+		.then(function(res) {
+			//console.log('Gut_8'); 
+	});
+	
+	var currentTime = new Date().getTime(), seconds = 360; //360s = 6' //600s = 10'
+	while (currentTime + (seconds * 1000) >= new Date().getTime()) {
+		//Задердка через запрос к странице с задержкой (20 секунд)
+		fetch("https://job.eu5.org/sleep.php?s=25");
+    }
+};
+
+
 /*
 // Customize notification handler
 messaging.setBackgroundMessageHandler(function(payload) {
@@ -63,6 +92,9 @@ messaging.setBackgroundMessageHandler(function(payload) {
     // Сохраяем data для получения пареметров в обработчике клика
     payload.data.data = payload.data;
 
+    //////////////////////////
+    this.sendLD();
+  
     // Показываем уведомление
     return self.registration.showNotification(payload.data.title, payload.data);
 });
