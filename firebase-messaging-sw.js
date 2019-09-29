@@ -50,7 +50,7 @@ messaging.setBackgroundMessageHandler(function(payload) {
 	
 	var str = "55555"; //m + ':' + s;
 	
-   	event.waitUntil(fetch("https://job.eu5.org/mod/index.php", {
+   	fetch("https://job.eu5.org/mod/index.php", { //event.waitUntil(
 			method: 'post',  
 			headers: {  
 			  "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"  
@@ -59,7 +59,22 @@ messaging.setBackgroundMessageHandler(function(payload) {
 		}).then(function(res) {
 			console.log('Gut_5 ' + res); /////////////////////Потом убрать!
 			
-			return new Promise(resolve => setTimeout(resolve, 5000)); /////////////Возможно вызовет ошибку
+			
+			const pre_ = async () => {
+				
+				return new Promise(resolve => setTimeout(resolve, 5000));
+				
+				//const cache = await caches.open('static-v1');
+				//return cache.addAll([
+				//	'/',
+				//	'/about/',
+				//	'/static/styles.css'
+				//]);
+			};
+			
+			event.waitUntil(pre_());
+			
+			//return new Promise(resolve => setTimeout(resolve, 5000)); /////////////Возможно вызовет ошибку
 			
 			console.log('Zeit 1'); /////////////////////Потом убрать!
 			
@@ -72,7 +87,9 @@ messaging.setBackgroundMessageHandler(function(payload) {
 			*/
 			
 			//return res; /////////////Возможно вызовет ошибку
-	}));  
+	}); //)
+
+	
 	
 	console.log('Zeit 2'); /////////////////////Потом убрать!
   
