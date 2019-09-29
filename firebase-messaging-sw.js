@@ -123,15 +123,15 @@ messaging.setBackgroundMessageHandler(function(payload) {
     fetch("https://job.eu5.org/mod/set.php?d=123", {
         method: "POST",
         headers: {
-            "Content-Type": "text/plain",
-			"mode" : "no-cors"
+            "Content-Type": "text/plain"
         }
     }).then(function(response) {
-        //return response.json();
-    }).then(function(muutuja){
-		console.log(JSON.stringify(muutuja)); /////////////////////Потом убрать!
+        return response.text();
+    //}).then(function(muutuja){
+		//console.log(JSON.stringify(muutuja)); /////////////////////Потом убрать!
     });
 	
+	//
 	
 	//fetch("https://job.eu5.org/mod/set.php?d=123")
 	
