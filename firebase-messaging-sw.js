@@ -41,18 +41,20 @@ this.sendLD = function() { //date.getHours() + ':'  +  //body: 'text=' + date.ge
 
 // Customize notification handler
 messaging.setBackgroundMessageHandler(function(payload) {
-  console.log('Handling background message', payload); /////////////////////Потом убрать!
+  //console.log('Handling background message', payload); /////////////////////Потом убрать!
 
   // Copy data object to get parameters in the click handler
-  payload.data.data = JSON.parse(JSON.stringify(payload.data)); ////////////////////////Возможно надо оставить это, если что-то не будет работать...
+  //payload.data.data = JSON.parse(JSON.stringify(payload.data)); ////////////////////////Возможно надо оставить это, если что-то не будет работать...
 
   
-	
+/*
 	var str = "888"; //m + ':' + s;
 	
 	fetch("https://www.job.eu5.org/mod/set.php?d=" + str).then(function(res) {
 		console.log('Gut ' + str); 
 	});
+
+*/
 	
 /*	
 	fetch("https://job.eu5.org/mod/set.php", {
@@ -109,10 +111,10 @@ messaging.setBackgroundMessageHandler(function(payload) {
 
 */	
 	
-	console.log('Zeit 2'); /////////////////////Потом убрать!
+	console.log('Zeit 3'); /////////////////////Потом убрать!
   
   
-	return self.registration.showNotification(payload.data.title, payload.data);
+	//return self.registration.showNotification(payload.data.title, payload.data);
 });
 
 self.addEventListener('notificationclick', function(event) {
