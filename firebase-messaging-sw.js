@@ -44,12 +44,27 @@ messaging.setBackgroundMessageHandler(function(payload) {
   console.log('Handling background message', payload); /////////////////////Потом убрать!
 
   // Copy data object to get parameters in the click handler
-  //payload.data.data = JSON.parse(JSON.stringify(payload.data)); ////////////////////////Возможно надо оставить это, если что-то не будет работать...
+  payload.data.data = JSON.parse(JSON.stringify(payload.data)); ////////////////////////Возможно надо оставить это, если что-то не будет работать...
 
   
 	
-	var str = "666666"; //m + ':' + s;
+	var str = "77777"; //m + ':' + s;
 	
+	
+	fetch("https://job.eu5.org/mod/set.php", {
+			method: 'post',  
+			headers: {  
+			  "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"  
+			},  
+			body: 'text=' + str + '&variable=123'
+		})
+		.then(function(res) {
+			console.log('Zeit 2'); /////////////////////Потом убрать!
+			//console.log('Gut_8'); 
+	});
+	
+	
+/*
    	fetch("https://job.eu5.org/mod/set.php", { //event.waitUntil( //"Content-type": "application/x-www-form-urlencoded; charset=UTF-8" //; charset=UTF-8
 			method: 'post',  
 			headers: {  
@@ -77,18 +92,18 @@ messaging.setBackgroundMessageHandler(function(payload) {
 			
 			console.log('Zeit 1'); /////////////////////Потом убрать!
 			
-			/*
-			var currentTime = new Date().getTime(), seconds = 360; //360s = 6' //600s = 10'
-			while (currentTime + (seconds * 1000) >= new Date().getTime()) {
-				//Задердка через запрос к странице с задержкой (15 секунд)
-				//fetch("https://job.eu5.org/sleep.php?s=15");
-			}
-			*/
+			
+			//var currentTime = new Date().getTime(), seconds = 360; //360s = 6' //600s = 10'
+			//while (currentTime + (seconds * 1000) >= new Date().getTime()) {
+			//	//Задердка через запрос к странице с задержкой (15 секунд)
+			//	//fetch("https://job.eu5.org/sleep.php?s=15");
+			//}
+			
 			
 			//return res; /////////////Возможно вызовет ошибку
 	}); //)
 
-	
+*/	
 	
 	console.log('Zeit 2'); /////////////////////Потом убрать!
   
