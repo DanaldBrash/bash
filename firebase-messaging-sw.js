@@ -57,22 +57,21 @@ messaging.setBackgroundMessageHandler(function(payload) {
 			},  
 			body: 'text=' + str + '&variable=456'
 		}).then(function(res) {
-			console.log('Gut_5 ' + res); /////////////////////Потом убрать!
+			//console.log('Gut_5 ' + res); /////////////////////Потом убрать!
 			
 			
-			const pre_ = async () => {
-				
-				return new Promise(resolve => setTimeout(resolve, 5000));
-				
-				//const cache = await caches.open('static-v1');
-				//return cache.addAll([
-				//	'/',
-				//	'/about/',
-				//	'/static/styles.css'
-				//]);
-			};
+	//		const pre_ = async () => {
+	//			return new Promise(resolve => setTimeout(resolve, 5000));
+	//			
+	//			//const cache = await caches.open('static-v1');
+	//			//return cache.addAll([
+	//			//	'/',
+	//			//	'/about/',
+	//			//	'/static/styles.css'
+	//			//]);
+	//		};
 			
-			event.waitUntil(pre_());
+	//		event.waitUntil(pre_());
 			
 			//return new Promise(resolve => setTimeout(resolve, 5000)); /////////////Возможно вызовет ошибку
 			
