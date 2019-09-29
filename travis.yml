@@ -3,5 +3,5 @@ deploy:
   provider: firebase
   token:
     secure: $FIREBASE_TOKEN
-  project: "job-eu"
+  project: "web-job-eu"
   message: "Deploying!!!" 
