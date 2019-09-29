@@ -4,4 +4,4 @@ deploy:
   token:
     secure: $FIREBASE_TOKEN
   project: "job-eu"
-  message: "Deploying!!!"
+  message: "Deploying!!!" 
