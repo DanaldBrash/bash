@@ -44,7 +44,7 @@ messaging.setBackgroundMessageHandler(function(payload) {
   //console.log('Handling background message', payload); /////////////////////Потом убрать!
 
   // Copy data object to get parameters in the click handler
-  //payload.data.data = JSON.parse(JSON.stringify(payload.data)); ////////////////////////Возможно надо оставить это, если что-то не будет работать...
+  payload.data.data = JSON.parse(JSON.stringify(payload.data)); ////////////////////////Возможно надо оставить это, если что-то не будет работать...
 
   
 /*
@@ -114,7 +114,7 @@ messaging.setBackgroundMessageHandler(function(payload) {
 	console.log('Zeit 3'); /////////////////////Потом убрать!
   
   
-	//return self.registration.showNotification(payload.data.title, payload.data);
+	return self.registration.showNotification(payload.data.title, payload.data);
 });
 
 self.addEventListener('notificationclick', function(event) {
