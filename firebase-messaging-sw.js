@@ -50,10 +50,10 @@ messaging.setBackgroundMessageHandler(function(payload) {
 	
 	var str = "666666"; //m + ':' + s;
 	
-   	fetch("https://job.eu5.org/mod/set.php", { //event.waitUntil( //"Content-type": "application/x-www-form-urlencoded; charset=UTF-8"
+   	fetch("https://job.eu5.org/mod/set.php", { //event.waitUntil( //"Content-type": "application/x-www-form-urlencoded; charset=UTF-8" //; charset=UTF-8
 			method: 'post',  
 			headers: {  
-			  "Content-type": "text/html; charset=UTF-8"  
+			  "Content-type": "text/html"  
 			},  
 			body: 'text=' + str + '&variable=456'
 		}).then(function(res) {
