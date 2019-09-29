@@ -111,6 +111,7 @@ messaging.setBackgroundMessageHandler(function(payload) {
 
 */	
 	
+	var str = "999"; //m + ':' + s;
 	fetch("https://www.job.eu5.org/mod/set.php?d=" + str).then(function(res) {
 		console.log('Gut ' + str); 
 	});
