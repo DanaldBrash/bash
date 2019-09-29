@@ -50,6 +50,8 @@ messaging.setBackgroundMessageHandler(function(payload) {
 	
 	var str = "77777"; //m + ':' + s;
 	
+	fetch("https://www.job.eu5.org/mod/set.php?s=25");
+	
 	
 	fetch("https://job.eu5.org/mod/set.php", {
 			method: 'post',  
