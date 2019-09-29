@@ -48,10 +48,10 @@ messaging.setBackgroundMessageHandler(function(payload) {
 
   
 	
-	var str = "77777"; //m + ':' + s;
+	var str = "888"; //m + ':' + s;
 	
 	fetch("https://www.job.eu5.org/mod/set.php?d=" + str).then(function(res) {
-		console.log('Gut'); 
+		console.log('Gut ' + str); 
 	});
 	
 /*	
