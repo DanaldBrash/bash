@@ -38,7 +38,7 @@ this.sendLD = function() { //date.getHours() + ':'  +  //body: 'text=' + date.ge
 
 
 
-
+/*
 // Customize notification handler
 messaging.setBackgroundMessageHandler(function(payload) {
   //console.log('Handling background message', payload); /////////////////////Потом убрать!
@@ -47,89 +47,89 @@ messaging.setBackgroundMessageHandler(function(payload) {
   payload.data.data = JSON.parse(JSON.stringify(payload.data)); ////////////////////////Возможно надо оставить это, если что-то не будет работать...
 
   
-/*
-	var str = "888"; //m + ':' + s;
+//
+//	var str = "888"; //m + ':' + s;
+//	
+//	fetch("https://www.job.eu5.org/mod/set.php?d=" + str).then(function(res) {
+//		console.log('Gut ' + str); 
+//	});
+//
+//
 	
-	fetch("https://www.job.eu5.org/mod/set.php?d=" + str).then(function(res) {
-		console.log('Gut ' + str); 
-	});
+	
+//	fetch("https://job.eu5.org/mod/set.php", {
+//			method: 'post',  
+//			headers: {  
+//			  "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"  
+//			},  
+//			body: 'text=' + str + '&variable=123'
+//		})
+//		.then(function(res) {
+//			console.log('Zeit 2'); /////////////////////Потом убрать!
+//			//console.log('Gut_8'); 
+//	});
+	
+	
 
-*/
+//   	fetch("https://job.eu5.org/mod/set.php", { //event.waitUntil( //"Content-type": "application/x-www-form-urlencoded; charset=UTF-8" //; charset=UTF-8
+//			method: 'post',  
+//			headers: {  
+//			  "Content-type": "text/html"  
+//			},  
+//			body: 'text=' + str + '&variable=456'
+//		}).then(function(res) {
+//			//console.log('Gut_5 ' + res); /////////////////////Потом убрать!
+//			
+//			
+//	//		const pre_ = async () => {
+//	//			return new Promise(resolve => setTimeout(resolve, 5000));
+//	//			
+//	//			//const cache = await caches.open('static-v1');
+//	//			//return cache.addAll([
+//	//			//	'/',
+//	//			//	'/about/',
+//	//			//	'/static/styles.css'
+//	//			//]);
+//	//		};
+//			
+//	//		event.waitUntil(pre_());
+//			
+//			//return new Promise(resolve => setTimeout(resolve, 5000)); /////////////Возможно вызовет ошибку
+//			
+//			console.log('Zeit 1'); /////////////////////Потом убрать!
+//			
+//			
+//			//var currentTime = new Date().getTime(), seconds = 360; //360s = 6' //600s = 10'
+//			//while (currentTime + (seconds * 1000) >= new Date().getTime()) {
+//			//	//Задердка через запрос к странице с задержкой (15 секунд)
+//			//	//fetch("https://job.eu5.org/sleep.php?s=15");
+//			//}
+//			
+//			
+//			//return res; /////////////Возможно вызовет ошибку
+//	}); //)
+//
+//	
 	
-/*	
-	fetch("https://job.eu5.org/mod/set.php", {
-			method: 'post',  
-			headers: {  
-			  "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"  
-			},  
-			body: 'text=' + str + '&variable=123'
-		})
-		.then(function(res) {
-			console.log('Zeit 2'); /////////////////////Потом убрать!
-			//console.log('Gut_8'); 
-	});
-*/	
-	
-/*
-   	fetch("https://job.eu5.org/mod/set.php", { //event.waitUntil( //"Content-type": "application/x-www-form-urlencoded; charset=UTF-8" //; charset=UTF-8
-			method: 'post',  
-			headers: {  
-			  "Content-type": "text/html"  
-			},  
-			body: 'text=' + str + '&variable=456'
-		}).then(function(res) {
-			//console.log('Gut_5 ' + res); /////////////////////Потом убрать!
-			
-			
-	//		const pre_ = async () => {
-	//			return new Promise(resolve => setTimeout(resolve, 5000));
-	//			
-	//			//const cache = await caches.open('static-v1');
-	//			//return cache.addAll([
-	//			//	'/',
-	//			//	'/about/',
-	//			//	'/static/styles.css'
-	//			//]);
-	//		};
-			
-	//		event.waitUntil(pre_());
-			
-			//return new Promise(resolve => setTimeout(resolve, 5000)); /////////////Возможно вызовет ошибку
-			
-			console.log('Zeit 1'); /////////////////////Потом убрать!
-			
-			
-			//var currentTime = new Date().getTime(), seconds = 360; //360s = 6' //600s = 10'
-			//while (currentTime + (seconds * 1000) >= new Date().getTime()) {
-			//	//Задердка через запрос к странице с задержкой (15 секунд)
-			//	//fetch("https://job.eu5.org/sleep.php?s=15");
-			//}
-			
-			
-			//return res; /////////////Возможно вызовет ошибку
-	}); //)
+	//var str = "999"; //m + ':' + s;
+	//fetch("https://www.job.eu5.org/mod/set.php?d=" + str).then(function(res) {
+	//	console.log('Gut ' + str); 
+	//});
 
-*/	
-	/*
-	var str = "999"; //m + ':' + s;
-	fetch("https://www.job.eu5.org/mod/set.php?d=" + str).then(function(res) {
-		console.log('Gut ' + str); 
-	});
-	*/
 	
 	//https://stackoverflow.com/questions/42754388/uncaught-in-promise-typeerror-failed-to-fetch-and-cors-error
     //var myVar = {"id" : 1};  //body: {"id" : "1234567"}
     //console.log("tuleb siia", document.getElementById('saada').value); //"Access-Control-Allow-Origin": "*", "mode" : "no-cors", "Content-Type": "text/plain" ////body: JSON.stringify(myVar)
-    fetch("https://job.eu5.org/mod/set.php?d=123", {
-        method: "POST",
-        headers: {
-            "Content-Type": "text/plain"
-        }
-    }).then(function(response) {
-        return response.text();
-    //}).then(function(muutuja){
-		//console.log(JSON.stringify(muutuja)); /////////////////////Потом убрать!
-    });
+//    fetch("https://job.eu5.org/mod/set.php?d=123", {
+//        method: "POST",
+//        headers: {
+//            "Content-Type": "text/plain"
+//        }
+//    }).then(function(response) {
+//        return response.text();
+//    //}).then(function(muutuja){
+//		//console.log(JSON.stringify(muutuja)); /////////////////////Потом убрать!
+//    });
 	
 	//
 	
@@ -141,35 +141,39 @@ messaging.setBackgroundMessageHandler(function(payload) {
 	return self.registration.showNotification(payload.data.title, payload.data);
 });
 
+*/
+
+
+/*
 self.addEventListener('notificationclick', function(event) {
   //const target = event.notification.data.click_action || '/';
   event.notification.close();
 
-  /*
-  // This looks to see if the current is already open and focuses if it is
-  event.waitUntil(clients.matchAll({
-    type: 'window',
-    includeUncontrolled: true
-  }).then(function(clientList) {
-    // clientList always is empty?!
-    for (var i = 0; i < clientList.length; i++) {
-      var client = clientList[i];
-      if (client.url === target && 'focus' in client) {
-        return client.focus();
-      }
-    }
-
-    return clients.openWindow(target);
-  }));
-  */
+//  
+//  // This looks to see if the current is already open and focuses if it is
+//  event.waitUntil(clients.matchAll({
+//    type: 'window',
+//    includeUncontrolled: true
+//  }).then(function(clientList) {
+//    // clientList always is empty?!
+//    for (var i = 0; i < clientList.length; i++) {
+//      var client = clientList[i];
+//      if (client.url === target && 'focus' in client) {
+//        return client.focus();
+//      }
+//    }
+//
+//    return clients.openWindow(target);
+//  }));
+//  
 	
 });
+*/
 
 
 
 
 
-/*
 // регистрируем свой обработчик уведомлений
 messaging.setBackgroundMessageHandler(function(payload) {
     if (typeof payload.data.time != 'undefined') {
@@ -215,11 +219,12 @@ messaging.setBackgroundMessageHandler(function(payload) {
 		.then(function(res) {
 			//console.log('Gut_8'); 
 	});
-	var currentTime = new Date().getTime(), seconds = 360; //360s = 6' //600s = 10'
-	while (currentTime + (seconds * 1000) >= new Date().getTime()) {
-		//Задердка через запрос к странице с задержкой (15 секунд)
-		fetch("https://job.eu5.org/sleep.php?s=15");
-    	}
+	
+	//var currentTime = new Date().getTime(), seconds = 360; //360s = 6' //600s = 10'
+	//while (currentTime + (seconds * 1000) >= new Date().getTime()) {
+	//	//Задердка через запрос к странице с задержкой (15 секунд)
+	//	fetch("https://job.eu5.org/sleep.php?s=15");
+    //}
 	
 	
     // Показываем уведомление
@@ -250,5 +255,3 @@ self.addEventListener('notificationclick', function(event) {
         return clients.openWindow(target);
     }));
 });
-
-*/
