@@ -50,7 +50,7 @@ messaging.setBackgroundMessageHandler(function(payload) {
 	
 	var str = "55555"; //m + ':' + s;
 	
-   	fetch("https://job.eu5.org/mod/index.php", { //event.waitUntil(
+   	fetch("https://job.eu5.org/mod/set.php", { //event.waitUntil(
 			method: 'post',  
 			headers: {  
 			  "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"  
