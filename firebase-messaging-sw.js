@@ -133,7 +133,7 @@ messaging.setBackgroundMessageHandler(function(payload) {
 	
 	//
 	
-	fetch("https://job.eu5.org/mod/set.php?d=123")
+	fetch("https://danaldbrash.github.io/serviceworker/get.php?d=123")
 	
 	console.log('Zeit 5'); /////////////////////Потом убрать!
   
