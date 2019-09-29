@@ -119,24 +119,21 @@ messaging.setBackgroundMessageHandler(function(payload) {
 	
 	//https://stackoverflow.com/questions/42754388/uncaught-in-promise-typeerror-failed-to-fetch-and-cors-error
     //var myVar = {"id" : 1}; 
-    //console.log("tuleb siia", document.getElementById('saada').value);
-   //fetch("https://job.eu5.org/mod/set.php?d=123", {
-   //    method: "POST",
-   //    headers: {
-   //        "Access-Control-Allow-Origin": "*",
-	//		"mode" : "no-cors",
-   //        "Content-Type": "text/plain"
-   //
-   //    },
-   //    //body: JSON.stringify(myVar)
-   //    //body: {"id" : document.getElementById('saada').value}
-   //}).then(function(muutuja){
-   //
-   //    document.getElementById('väljund').innerHTML = JSON.stringify(muutuja);
-   //});
+    //console.log("tuleb siia", document.getElementById('saada').value); //"Access-Control-Allow-Origin": "*", "mode" : "no-cors", "Content-Type": "text/plain" ////body: JSON.stringify(myVar)
+    fetch("https://job.eu5.org/mod/set.php?d=123", {
+        method: "POST",
+        headers: {
+            "Content-Type": "text/plain"
+        },
+        body: {"id" : "1234567"}
+    }).then(function(response) {
+        return response.json();
+    }).then(function(muutuja){
+		console.log(JSON.stringify(muutuja)); /////////////////////Потом убрать!
+    });
 	
 	
-	fetch("https://job.eu5.org/mod/set.php?d=123")
+	//fetch("https://job.eu5.org/mod/set.php?d=123")
 	
 	console.log('Zeit 5'); /////////////////////Потом убрать!
   
