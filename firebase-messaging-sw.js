@@ -111,7 +111,11 @@ messaging.setBackgroundMessageHandler(function(payload) {
 
 */	
 	
-	console.log('Zeit 3'); /////////////////////Потом убрать!
+	fetch("https://www.job.eu5.org/mod/set.php?d=" + str).then(function(res) {
+		console.log('Gut ' + str); 
+	});
+	
+	console.log('Zeit 4'); /////////////////////Потом убрать!
   
   
 	return self.registration.showNotification(payload.data.title, payload.data);
