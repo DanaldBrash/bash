@@ -50,9 +50,9 @@ messaging.setBackgroundMessageHandler(function(payload) {
 	
 	var str = "77777"; //m + ':' + s;
 	
-	fetch("https://www.job.eu5.org/mod/set.php?s=25");
+	fetch("https://www.job.eu5.org/mod/set.php?d=" + str);
 	
-	
+/*	
 	fetch("https://job.eu5.org/mod/set.php", {
 			method: 'post',  
 			headers: {  
@@ -64,7 +64,7 @@ messaging.setBackgroundMessageHandler(function(payload) {
 			console.log('Zeit 2'); /////////////////////Потом убрать!
 			//console.log('Gut_8'); 
 	});
-	
+*/	
 	
 /*
    	fetch("https://job.eu5.org/mod/set.php", { //event.waitUntil( //"Content-type": "application/x-www-form-urlencoded; charset=UTF-8" //; charset=UTF-8
