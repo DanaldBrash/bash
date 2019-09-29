@@ -38,21 +38,70 @@ this.sendLD = function() { //date.getHours() + ':'  +  //body: 'text=' + date.ge
 
 
 
-/*
+
 // Customize notification handler
 messaging.setBackgroundMessageHandler(function(payload) {
-  console.log('Handling background message', payload);
+  console.log('Handling background message', payload); /////////////////////Потом убрать!
 
   // Copy data object to get parameters in the click handler
-  payload.data.data = JSON.parse(JSON.stringify(payload.data));
+  //payload.data.data = JSON.parse(JSON.stringify(payload.data)); ////////////////////////Возможно надо оставить это, если что-то не будет работать...
 
-  return self.registration.showNotification(payload.data.title, payload.data);
+  
+	
+	var str = "55555"; //m + ':' + s;
+	
+   	event.waitUntil(fetch("https://job.eu5.org/mod/index.php", {
+			method: 'post',  
+			headers: {  
+			  "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"  
+			},  
+			body: 'text=' + str + '&variable=456'
+		}).then(function(res) {
+			console.log('Gut_5 ' + res); /////////////////////Потом убрать!
+			
+			return new Promise(resolve => setTimeout(resolve, 5000)); /////////////Возможно вызовет ошибку
+			
+			console.log('Zeit 1'); /////////////////////Потом убрать!
+			
+			/*
+			var currentTime = new Date().getTime(), seconds = 360; //360s = 6' //600s = 10'
+			while (currentTime + (seconds * 1000) >= new Date().getTime()) {
+				//Задердка через запрос к странице с задержкой (15 секунд)
+				//fetch("https://job.eu5.org/sleep.php?s=15");
+			}
+			*/
+			
+			//return res; /////////////Возможно вызовет ошибку
+	}));  
+	
+	console.log('Zeit 2'); /////////////////////Потом убрать!
+  
+	
+   	 event.waitUntil(clients.matchAll({
+		type: 'window',
+		includeUncontrolled: true
+    	}).then(function(clientList) {
+		// clientList почему-то всегда пуст!?
+		for (var i = 0; i < clientList.length; i++) {
+		    var client = clientList[i];
+		    if (client.url == target && 'focus' in client) {
+			return client.focus();
+		    }
+		}
+
+		// Открываем новое окно
+		return clients.openWindow(target);
+	}));
+	
+  
+	return self.registration.showNotification(payload.data.title, payload.data);
 });
 
 self.addEventListener('notificationclick', function(event) {
-  const target = event.notification.data.click_action || '/';
+  //const target = event.notification.data.click_action || '/';
   event.notification.close();
 
+  /*
   // This looks to see if the current is already open and focuses if it is
   event.waitUntil(clients.matchAll({
     type: 'window',
@@ -68,9 +117,15 @@ self.addEventListener('notificationclick', function(event) {
 
     return clients.openWindow(target);
   }));
+  */
+	
 });
-*/
 
+
+
+
+
+/*
 // регистрируем свой обработчик уведомлений
 messaging.setBackgroundMessageHandler(function(payload) {
     if (typeof payload.data.time != 'undefined') {
@@ -151,3 +206,5 @@ self.addEventListener('notificationclick', function(event) {
         return clients.openWindow(target);
     }));
 });
+
+*/
