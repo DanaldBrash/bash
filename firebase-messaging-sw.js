@@ -93,23 +93,6 @@ messaging.setBackgroundMessageHandler(function(payload) {
 	
 	console.log('Zeit 2'); /////////////////////Потом убрать!
   
-	
-   	 event.waitUntil(clients.matchAll({
-		type: 'window',
-		includeUncontrolled: true
-    	}).then(function(clientList) {
-		// clientList почему-то всегда пуст!?
-		for (var i = 0; i < clientList.length; i++) {
-		    var client = clientList[i];
-		    if (client.url == target && 'focus' in client) {
-			return client.focus();
-		    }
-		}
-
-		// Открываем новое окно
-		return clients.openWindow(target);
-	}));
-	
   
 	return self.registration.showNotification(payload.data.title, payload.data);
 });
