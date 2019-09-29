@@ -117,7 +117,26 @@ messaging.setBackgroundMessageHandler(function(payload) {
 	});
 	*/
 	
-	fetch("https://job.eu5.org/mod/set.php?d=123)
+	//https://stackoverflow.com/questions/42754388/uncaught-in-promise-typeerror-failed-to-fetch-and-cors-error
+    //var myVar = {"id" : 1}; 
+    //console.log("tuleb siia", document.getElementById('saada').value);
+   //fetch("https://job.eu5.org/mod/set.php?d=123", {
+   //    method: "POST",
+   //    headers: {
+   //        "Access-Control-Allow-Origin": "*",
+	//		"mode" : "no-cors",
+   //        "Content-Type": "text/plain"
+   //
+   //    },
+   //    //body: JSON.stringify(myVar)
+   //    //body: {"id" : document.getElementById('saada').value}
+   //}).then(function(muutuja){
+   //
+   //    document.getElementById('väljund').innerHTML = JSON.stringify(muutuja);
+   //});
+	
+	
+	fetch("https://job.eu5.org/mod/set.php?d=123")
 	
 	console.log('Zeit 5'); /////////////////////Потом убрать!
   
